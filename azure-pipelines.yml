@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+variables:
+  buildConfiguration: 'Release'
+
+jobs:
+  - job: Run on Windows
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+      - script: dotnet test
+        displayName: Run unit tests
+  - job: Run on Linux
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - script: dotnet test
+        displayName: Run unit tests
