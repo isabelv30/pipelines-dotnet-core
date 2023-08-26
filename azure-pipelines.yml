@@ -10,13 +10,13 @@ variables:
   buildConfiguration: 'Release'
 
 jobs:
-- job: Run on Windows
+- job: RunOnWindows
   pool:
     vmImage: 'windows-latest'
   steps:
     - script: dotnet test
       displayName: Run unit tests
-- job: Run on Linux
+- job: RunOnLinux
   pool:
     vmImage: 'ubuntu-latest'
   steps:
